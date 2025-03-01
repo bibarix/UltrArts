@@ -1,0 +1,558 @@
+/*
+ * Student Name: Badr Eddine Amatoch
+ * Student ID: 041180238
+ * Course: CST8117 - Cross-Platform Web Design
+ * Semester: 1
+ * Assignment: Online store Part 2
+ * Date Submitted:  
+ */
+
+
+/*Color Palette Technique: Monochromatic */
+
+/* ---------------------------------------main.css-------------------------------------------*/
+
+/* ----------------------------------------body-------------------------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  color: #222;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  margin: 35px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px;
+}
+
+.centered-text {
+  text-align: center;
+  margin: 10px;
+}
+
+address {
+  font-size: 12px;
+}
+
+/* ----------------------------------------header------------------------------------------- */
+
+header {
+  background-color: #e0e0e0;
+  padding: 20px;
+  display: flex; /* Enable flexbox for the header */
+  justify-content: space-between; 
+  align-items: center; 
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+#logo img {
+  width: 50%;
+}
+
+header nav {
+  display: flex;
+}
+
+header nav a {
+  margin: 0 15px; 
+  text-decoration: none;
+  color: #222;
+  position: relative; 
+  padding: 10px 15px; 
+}
+
+
+
+/* Underline animation on hover */
+header nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+header nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Add a subtle background color on hover */
+header nav a:hover {
+  background-color: rgba(0, 123, 255, 0.1); 
+  border-radius: 5px; 
+}
+
+/* Styles for the search form */
+header form {
+  display: flex; /* Make the input and button arrange horizontally */
+}
+
+.search-form {
+  position: relative;
+}
+
+.search-input {
+  padding: 5px 30px 5px 5px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px; 
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px; 
+  transform: translateY(-50%);
+  width: 1.2em;
+  height: 1.2em;
+  fill: #333; 
+}
+
+/* skip-link */
+.skip-link {
+  position: absolute;
+  top: -40px; /* Initially hidden off-screen */
+  left: 0;
+  background-color: #f0f0f0; 
+  color: #333;
+  padding: 10px;
+  z-index: 100; /* Ensure it's on top */
+  text-decoration: none;
+  transition: top 0.3s ease-in-out; /* Smooth transition */
+}
+
+.skip-link:focus {
+  top: 0; /* Show the link on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a visual indicator */
+}
+
+
+/* -------------------------------------------main---------------------------------------- */
+
+main {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding: 5px;
+  padding-bottom: 0;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+/* image-gallery and Slide */
+
+.image-gallery {
+  width: 1150px; 
+  height: 450px; 
+  margin: 20px auto; 
+  border:10px #e0e0e0 solid;
+  background-color:#e0e0e0 ;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: slideshow 30s infinite; /* 10 images * (2s display + 1s transition) */
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+  border-radius: 15px;
+   
+}
+
+
+/* Apply different animation delays to each slide */
+.slide:nth-child(1) { animation-delay: 0s; }  /* First slide starts immediately */
+.slide:nth-child(2) { animation-delay: 3s; }  /* Second slide appears after 3 seconds */
+.slide:nth-child(3) { animation-delay: 6s; }  /* Third slide appears after 6 seconds */
+.slide:nth-child(4) { animation-delay: 9s; }  /* Fourth slide appears after 9 seconds */
+.slide:nth-child(5) { animation-delay: 12s; } /* Fifth slide appears after 12 seconds */
+.slide:nth-child(6) { animation-delay: 15s; } /* Sixth slide appears after 15 seconds */
+.slide:nth-child(7) { animation-delay: 18s; } /* Seventh slide appears after 18 seconds */
+.slide:nth-child(8) { animation-delay: 21s; } /* Eighth slide appears after 21 seconds */
+.slide:nth-child(9) { animation-delay: 24s; } /* Ninth slide appears after 24 seconds */
+.slide:nth-child(10) { animation-delay: 27s; } /* Tenth slide appears after 27 seconds */
+
+@keyframes slideshow {
+  0% { opacity: 0; }    /* Slide is initially invisible */
+  10% { opacity: 1; }   /* Slide fades in */
+  60% { opacity: 1; }   /* Slide remains fully visible for a longer time */
+  70% { opacity: 0; }   /* Slide starts fading out earlier */
+  100% { opacity: 0; }  /* Slide is completely invisible again */
+}
+
+/*figure figcaption*/
+figure figcaption {
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+/*features-list*/
+.features-list {
+  list-style: none;
+  padding: 20px 0;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.features-list li {
+  margin: 0 50px; 
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  white-space: nowrap;
+}
+
+.features-list li i {
+  margin-right: 15px; 
+  font-size: 2.5em;
+  vertical-align: middle;
+}
+
+/*External Link*/
+p.instagram-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+p.instagram-link a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  color: black;
+  padding: 5px 9px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.5s ease, color 0.5s ease; /* Increased transition duration */
+}
+
+p.instagram-link a:hover {
+  background-color: black;
+  color: white;
+}
+
+p.instagram-link a i {
+  font-size: 1.2em;
+}
+
+
+/* -------------------------------------about us---------------------------------------- */
+
+.about-content {
+  max-width: 1000px; 
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.about-photo {
+  float: right;
+  margin: 0 0 30px 30px; 
+  max-width: 500px; 
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.about-content p {
+  text-align: justify;
+  line-height: 1.7; 
+  margin-bottom: 30px; 
+  font-size: 1.1em; 
+}
+
+.about-content h1 {
+  font-size: 2.5em; 
+  margin-bottom: 30px;
+}
+
+.about-content figcaption {
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: 10px;
+  color: #555; 
+}
+
+/* -------------------------------------contact us---------------------------------------- */
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.contact-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 500px;
+}
+
+.contact-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 2em;
+}
+
+.contact-form-section {
+  display: flex;
+  justify-content: center;
+}
+
+.form-inputs {
+  width: 100%;
+}
+
+.form-inputs label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+  font-size: 0.9em;
+}
+
+.form-inputs input,
+.form-inputs textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9em;
+  color: #555;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Added box-sizing */
+}
+
+.form-inputs input:focus,
+.form-inputs textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-inputs textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-button {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.contact-info {
+  text-align: left;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  font-size: 0.85em;
+}
+
+.contact-info h2 {
+  font-size: 0.9em;
+  margin-bottom: 2px;
+  color: #333;
+  font-weight: 600;
+}
+
+.contact-info p {
+  line-height: 1.3;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+/*------------------------------------------Cart-------------------------------------------*/
+.cart-page {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.cart-items table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-items th,
+.cart-items td {
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-items th {
+  background-color: #f2f2f2;
+}
+
+.cart-items img {
+  max-width: 80px;
+  height: auto;
+}
+
+.quantity-input {
+  width: 50px;
+  padding: 5px;
+}
+
+.price-cart {
+  color:green ;
+  font-weight: bold;
+}
+
+.subtotal-cart {
+color:green ;
+font-weight: bold;
+}
+
+.remove-item {
+  background-color: #f0f0f0;
+  color: white;
+  border: 2px solid #f0f0f0;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.remove-item:hover {
+  background-color: #ccc8c8;
+  
+}
+
+
+/* Cart Summary */
+.cart-summary {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+.summary-row p {
+  margin: 0 10px;
+}
+
+.summary-value {
+  font-weight: bold;
+}
+
+.summary-value-total {
+  font-weight: bold;
+  color:green ;
+  font-weight: bold;
+}
+
+/*--------------------------------------------footer----------------------------------------*/
+
+footer {
+  background-color: #e0e0e0;
+  padding: 10px 0;
+  text-align: left;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 0 20px;
+  height: auto;
+  min-height: 50px;
+}
+
+/* copyright */
+.copyright {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* footer-nav */
+.footer-nav {
+  display: flex;
+  align-items: center;
+}
+
+.footer-nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9em;
+  position: relative;
+  padding: 10px 15px;
+}
+
+.footer-nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.footer-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
