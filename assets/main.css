@@ -3,55 +3,67 @@
  * Student ID: 041180238
  * Course: CST8117 - Cross-Platform Web Design
  * Semester: 1
- * Assignment: Online store Part 2
- * Date Submitted:  
+ * Assignment: Online store Part 3
+ * Date Submitted:3/24/2025
  */
 
-
-/*Color Palette Technique: Monochromatic */
+ /*Color Palette Technique: Monochromatic */
 
 /* ---------------------------------------main.css-------------------------------------------*/
 
 /* ----------------------------------------body-------------------------------------------- */
+
+ body, html {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 16px; 
+}
+
 body {
   font-family: Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1rem; 
   background-color: #f0f0f0;
   color: #222;
 }
 
 h1 {
   text-align: center;
+  font-size: 2.25rem; 
 }
 
 p {
-  margin: 35px;
+  margin: 2.1875rem; 
   font-family: "Times New Roman", Times, serif;
-  font-size: 17px;
+  font-size: 1.0625rem; 
 }
 
 .centered-text {
   text-align: center;
-  margin: 10px;
+  margin: 0.625rem;
 }
 
 address {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 /* ----------------------------------------header------------------------------------------- */
 
 header {
   background-color: #e0e0e0;
-  padding: 20px;
-  display: flex; /* Enable flexbox for the header */
-  justify-content: space-between; 
-  align-items: center; 
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 #logo img {
   width: 50%;
+  max-width: 300px;
+  height: auto;
 }
 
 header nav {
@@ -59,14 +71,12 @@ header nav {
 }
 
 header nav a {
-  margin: 0 15px; 
+  margin: 0 0.9375rem;
   text-decoration: none;
   color: #222;
-  position: relative; 
-  padding: 10px 15px; 
+  position: relative;
+  padding: 0.625rem 0.9375rem;
 }
-
-
 
 /* Underline animation on hover */
 header nav a::after {
@@ -74,7 +84,7 @@ header nav a::after {
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
+  height: 0.125rem;
   bottom: 0;
   left: 0;
   background-color: #000000;
@@ -87,15 +97,13 @@ header nav a:hover::after {
   transform-origin: bottom left;
 }
 
-/* Add a subtle background color on hover */
 header nav a:hover {
-  background-color: rgba(0, 123, 255, 0.1); 
-  border-radius: 5px; 
+  background-color: rgba(0, 123, 255, 0.1);
+  border-radius: 0.3125rem;
 }
 
-/* Styles for the search form */
 header form {
-  display: flex; /* Make the input and button arrange horizontally */
+  display: flex;
 }
 
 .search-form {
@@ -103,63 +111,94 @@ header form {
 }
 
 .search-input {
-  padding: 5px 30px 5px 5px; 
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 200px; 
+  padding: 0.3125rem 1.875rem 0.3125rem 0.3125rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.3125rem;
+  width: 12.5rem;
 }
 
 .search-icon {
   position: absolute;
   top: 50%;
-  right: 10px; 
+  right: 0.625rem;
   transform: translateY(-50%);
   width: 1.2em;
   height: 1.2em;
-  fill: #333; 
+  fill: #333;
 }
 
 /* skip-link */
 .skip-link {
   position: absolute;
-  top: -40px; /* Initially hidden off-screen */
+  top: -2.5rem; /* Initially hidden off-screen */
   left: 0;
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
   color: #333;
-  padding: 10px;
+  padding: 0.625rem;
   z-index: 100; /* Ensure it's on top */
   text-decoration: none;
   transition: top 0.3s ease-in-out; /* Smooth transition */
 }
 
 .skip-link:focus {
-  top: 0; /* Show the link on focus */
+  top: 0;/* Show the link on focus */
   outline: none; /* Remove default outline */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a visual indicator */
+  box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.3);/* Add a visual indicator */
 }
 
+/*hamburger-icon*/
+.hamburger-icon {
+  display: none;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 1.875rem;
+  height: 1.5625rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.hamburger-icon .line {
+  display: block;
+  height: 0.1875rem;
+  background-color: #333;
+  margin: 0.3125rem 0;
+  transition: 0.3s;
+}
+
+.hamburger-icon.open .line1 {
+  transform: rotate(-45deg) translate(-0.3125rem, 0.375rem);
+}
+
+.hamburger-icon.open .line2 {
+  opacity: 0;
+}
+
+.hamburger-icon.open .line3 {
+  transform: rotate(45deg) translate(-0.3125rem, -0.375rem);
+}
 
 /* -------------------------------------------main---------------------------------------- */
 
 main {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  padding: 5px;
+  border-top-left-radius: 0.125rem;
+  border-top-right-radius: 0.125rem;
+  padding: 0.3125rem;
   padding-bottom: 0;
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* image-gallery and Slide */
 
 .image-gallery {
-  width: 1150px; 
-  height: 450px; 
-  margin: 20px auto; 
-  border:10px #e0e0e0 solid;
-  background-color:#e0e0e0 ;
-  border-radius: 15px;
+  width: 71.875rem;
+  height: 28.125rem;
+  margin: 1.25rem auto;
+  border: 0.625rem #e0e0e0 solid;
+  background-color: #e0e0e0;
+  border-radius: 0.9375rem;
   overflow: hidden;
   position: relative;
 }
@@ -171,19 +210,16 @@ main {
   width: 100%;
   height: 100%;
   opacity: 0;
-  animation: slideshow 30s infinite; /* 10 images * (2s display + 1s transition) */
+  animation: slideshow 30s infinite;/* 10 images * (2s display + 1s transition) */
 }
 
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   display: block;
-  border-radius: 15px;
-   
+  border-radius: 0.9375rem;
 }
-
-
 /* Apply different animation delays to each slide */
 .slide:nth-child(1) { animation-delay: 0s; }  /* First slide starts immediately */
 .slide:nth-child(2) { animation-delay: 3s; }  /* Second slide appears after 3 seconds */
@@ -207,15 +243,15 @@ main {
 /*figure figcaption*/
 figure figcaption {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
 }
-
 
 /*features-list*/
 .features-list {
   list-style: none;
-  padding: 20px 0;
-  margin: 20px auto;
+  padding: 1.25rem 0;
+  margin: 1.25rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,23 +259,24 @@ figure figcaption {
 }
 
 .features-list li {
-  margin: 0 50px; 
+  margin: 0 3.125rem;
   display: flex;
   align-items: center;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   white-space: nowrap;
 }
 
 .features-list li i {
-  margin-right: 15px; 
-  font-size: 2.5em;
+  margin-right: 0.9375rem;
+  font-size: 2.5rem;
   vertical-align: middle;
 }
 
 /*External Link*/
 p.instagram-link {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 1.25rem;
+  font-size: 1rem;
 }
 
 p.instagram-link a {
@@ -248,11 +285,12 @@ p.instagram-link a {
   justify-content: center;
   background-color: #f0f0f0;
   color: black;
-  padding: 5px 9px;
+  padding: 0.3125rem 0.5625rem;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-weight: 600;
   transition: background-color 0.5s ease, color 0.5s ease; /* Increased transition duration */
+  font-size: 1rem;
 }
 
 p.instagram-link a:hover {
@@ -264,45 +302,69 @@ p.instagram-link a i {
   font-size: 1.2em;
 }
 
+/*mobile-cta-buttons*/
+.mobile-cta-buttons {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.cta-button {
+  display: block;
+  padding: 0.9375rem 1.25rem;
+  background-color: #000000;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.3125rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #5a5858;
+  color: white;
+}
 
 /* -------------------------------------about us---------------------------------------- */
 
 .about-content {
-  max-width: 1000px; 
-  margin: 20px auto;
-  padding: 20px;
+  max-width: 62.5rem;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
 }
 
 .about-photo {
   float: right;
-  margin: 0 0 30px 30px; 
-  max-width: 500px; 
+  margin: 0 0 1.875rem 1.875rem;
+  max-width: 31.25rem;
 }
 
 .about-photo img {
   width: 100%;
   height: auto;
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .about-content p {
   text-align: justify;
-  line-height: 1.7; 
-  margin-bottom: 30px; 
-  font-size: 1.1em; 
+  line-height: 1.7;
+  margin-bottom: 1.875rem;
+  font-size: 1.1rem;
 }
 
 .about-content h1 {
-  font-size: 2.5em; 
-  margin-bottom: 30px;
+  font-size: 2.5rem;
+  margin-bottom: 1.875rem;
 }
 
 .about-content figcaption {
-  font-size: 0.9em;
+  font-size: 0.9rem;
   text-align: center;
-  margin-top: 10px;
-  color: #555; 
+  margin-top: 0.625rem;
+  color: #555;
 }
 
 /* -------------------------------------contact us---------------------------------------- */
@@ -311,23 +373,22 @@ p.instagram-link a i {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background-color: #f0f0f0;
 }
 
 .contact-container {
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  width: 500px;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  padding: 1.875rem;
+  width: 31.25rem;
 }
 
 .contact-container h1 {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 1.5625rem;
   color: #333;
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 .contact-form-section {
@@ -341,24 +402,24 @@ p.instagram-link a i {
 
 .form-inputs label {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 0.375rem;
   font-weight: 600;
   color: #444;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 .form-inputs input,
 .form-inputs textarea {
   display: block;
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 0.9em;
+  padding: 0.625rem;
+  margin-bottom: 0.9375rem;
+  border: 0.0625rem solid #ddd;
+  border-radius: 0.3125rem;
+  font-size: 0.9rem;
   color: #555;
   transition: border-color 0.3s ease;
-  box-sizing: border-box; /* Added box-sizing */
+  box-sizing: border-box;
 }
 
 .form-inputs input:focus,
@@ -369,18 +430,18 @@ p.instagram-link a i {
 
 .form-inputs textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 7.5rem;
 }
 
 .contact-button {
   background-color: white;
   color: black;
-  padding: 10px 20px;
-  border: 2px solid black;
-  border-radius: 5px;
+  padding: 0.625rem 1.25rem;
+  border: 0.125rem solid black;
+  border-radius: 0.3125rem;
   cursor: pointer;
-  font-size: 1em;
-  margin-top: 15px;
+  font-size: 1rem;
+  margin-top: 0.9375rem;
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -392,30 +453,32 @@ p.instagram-link a i {
 
 .contact-info {
   text-align: left;
-  margin-top: 15px;
-  padding-top: 10px;
-  border-top: 1px solid #eee;
-  font-size: 0.85em;
+  margin-top: 0.9375rem;
+  padding-top: 0.625rem;
+  border-top: 0.0625rem solid #eee;
+  font-size: 0.85rem;
 }
 
 .contact-info h2 {
-  font-size: 0.9em;
-  margin-bottom: 2px;
+  font-size: 0.9rem;
+  margin-bottom: 0.125rem;
   color: #333;
   font-weight: 600;
 }
 
 .contact-info p {
   line-height: 1.3;
-  margin-bottom: 4px;
+  margin-bottom: 0.25rem;
   color: #555;
+  font-size: 0.85rem;
 }
 
 /*------------------------------------------Cart-------------------------------------------*/
+
 .cart-page {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
+  max-width: 75rem;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
 }
 
 .cart-items table {
@@ -425,65 +488,73 @@ p.instagram-link a i {
 
 .cart-items th,
 .cart-items td {
-  padding: 10px 15px;
+  padding: 0.625rem 0.9375rem;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.0625rem solid #ddd;
 }
 
 .cart-items th {
   background-color: #f2f2f2;
+  font-size: 1rem;
+}
+
+.cart-items td {
+  font-size: 0.9rem;
 }
 
 .cart-items img {
-  max-width: 80px;
+  max-width: 5rem;
   height: auto;
 }
 
 .quantity-input {
-  width: 50px;
-  padding: 5px;
+  width: 3.125rem;
+  padding: 0.3125rem;
+  font-size: 0.9rem;
 }
 
 .price-cart {
-  color:green ;
+  color: green;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .subtotal-cart {
-color:green ;
-font-weight: bold;
+  color: green;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .remove-item {
   background-color: #f0f0f0;
-  color: white;
-  border: 2px solid #f0f0f0;
-  padding: 5px 10px;
+  color: black;
+  border: 0.125rem solid #f0f0f0;
+  padding: 0.3125rem 0.625rem;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 0.1875rem;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 0.8rem;
 }
 
 .remove-item:hover {
   background-color: #ccc8c8;
-  
 }
-
 
 /* Cart Summary */
 .cart-summary {
-  margin-top: 20px;
+  margin-top: 1.25rem;
   text-align: right;
+  font-size: 1rem;
 }
 
 .summary-row {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
 }
 
 .summary-row p {
-  margin: 0 10px;
+  margin: 0 0.625rem;
 }
 
 .summary-value {
@@ -492,51 +563,49 @@ font-weight: bold;
 
 .summary-value-total {
   font-weight: bold;
-  color:green ;
-  font-weight: bold;
+  color: green;
 }
 
 /*--------------------------------------------footer----------------------------------------*/
 
 footer {
   background-color: #e0e0e0;
-  padding: 10px 0;
+  padding: 0.625rem 0;
   text-align: left;
 }
 
 .footer-content {
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  padding: 0 20px;
+  border-top-left-radius: 0.9375rem;
+  border-top-right-radius: 0.9375rem;
+  padding: 0 1.25rem;
   height: auto;
-  min-height: 50px;
+  min-height: 3.125rem;
+  font-size: 0.9rem;
 }
 
-/* copyright */
 .copyright {
   font-size: 0.9em;
   color: #666;
 }
 
-/* footer-nav */
 .footer-nav {
   display: flex;
   align-items: center;
 }
 
 .footer-nav a {
-  margin: 0 15px;
+  margin: 0 0.9375rem;
   text-decoration: none;
   color: #333;
   font-size: 0.9em;
   position: relative;
-  padding: 10px 15px;
+  padding: 0.625rem 0.9375rem;
 }
 
 .footer-nav a::after {
@@ -544,7 +613,7 @@ footer {
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
+  height: 0.125rem;
   bottom: 0;
   left: 0;
   background-color: #000000;
@@ -555,4 +624,278 @@ footer {
 .footer-nav a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+/*---------------------------------------Responsive adjustments -------------------------------------*/
+
+/* Main mobile media query - I'm using this for screens with max width of 768px */
+@media screen and (max-width: 768px) {
+  /* I adjusted the base font size for better readability on smaller screens */
+  body {
+    font-size: 1rem;
+  }
+
+  /* I reorganized the header layout for mobile display */
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /* I reduced the logo size on mobile to fit better */
+  #logo img {
+    width: 70%;
+    max-width: 18.75rem;
+  }
+
+  /* I set up the mobile navigation menu to be hidden by default */
+  header nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.625rem;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+  }
+
+  /* I created this style for when mobile navigation menu is toggled open */
+  header nav.open {
+    display: flex;
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  /* I adjusted nav links for a vertical mobile layout */
+  header nav a {
+    margin: 0.625rem 0;
+    padding: 0.9375rem;
+    border-bottom: 0.0625rem solid #ccc;
+    text-align: center;
+  }
+
+  /* I made the search form full width on mobile */
+  .search-form {
+    width: 100%;
+    margin-top: 0.625rem;
+  }
+
+  /* I made the search input responsive to container width */
+  .search-input {
+    width: calc(100% - 2.5rem);
+  }
+
+  /* I repositioned the search icon in mobile view */
+  .search-icon {
+    right: 0.3125rem;
+  }
+
+  /* I resized the image gallery for mobile screens */
+  .image-gallery {
+    width: 95%;
+    height: auto;
+    min-height: 200px;
+    margin: 1rem auto;
+    display: block;
+    visibility: visible;
+  }
+
+  /* I changed the features list from horizontal to vertical layout */
+  .features-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* I adjusted spacing for feature items in vertical layout */
+  .features-list li {
+    margin: 1.25rem 0;
+    text-align: center;
+  }
+
+  /* I reordered navigation to appear after other elements */
+  nav {
+    order: 2;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.25rem;
+    flex-direction: column;
+  }
+
+  /* I styled each nav link as a block for easier tapping */
+  nav a {
+    display: block;
+    margin: 0.625rem 0;
+    padding: 0.9375rem;
+    border-bottom: 0.0625rem solid #ccc;
+  }
+
+  /* I display the hamburger menu icon only on mobile */
+  .hamburger-icon {
+    display: block;
+  }
+
+  /* I show mobile call-to-action buttons for small screens */
+  .mobile-cta-buttons {
+    display: flex;
+  }
+
+  /* I hide the standard header navigation on mobile */
+  header > nav {
+    display: none;
+  }
+  
+  /* I centered footer text and removed margin */
+  footer p {
+    text-align: center;
+    margin: 0;
+  }
+}
+
+/* I created this specific media query for shopping cart on mobile devices */
+@media (max-width: 768px) {
+  /* I reduced padding on cart page for smaller screens */
+  .cart-page {
+    padding: 1rem;
+  }
+  
+  /* I reduced font size for cart table to fit mobile screens */
+  .cart-items table {
+    font-size: 0.8rem;
+  }
+  
+  /* I reduced padding in table cells for compact display */
+  .cart-items th,
+  .cart-items td {
+    padding: 0.5rem;
+  }
+  
+  /* I made product images smaller for mobile view */
+  .cart-items img {
+    max-width: 3rem;
+  }
+  
+  /* I adjusted quantity input size for better mobile interaction */
+  .quantity-input {
+    width: 2.5rem;
+    font-size: 0.8rem;
+  }
+  
+  /* I reduced price and subtotal font size */
+  .price-cart,
+  .subtotal-cart {
+    font-size: 0.9rem;
+  }
+  
+  /* I reduced cart summary font size for mobile */
+  .cart-summary {
+    font-size: 0.9rem;
+  }
+  
+  /* I changed summary row layout from horizontal to vertical */
+  .summary-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* I adjusted spacing for summary items */
+  .summary-row p {
+    margin: 0.2rem 0;
+  }
+}
+
+/* I created this media query for contact form on mobile devices */
+@media screen and (max-width: 768px) {
+  /* I adjusted contact content layout for mobile */
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  /* I prevented the form from shrinking */
+  form {
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  /* I made contact container responsive to mobile screens */
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 80%;
+    margin: 0;
+    margin-bottom: 4.5rem;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+  }
+
+  /* I reduced heading size on mobile */
+  .contact-container h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  /* I made form inputs full width and increased tap target size */
+  .form-inputs input,
+  .form-inputs textarea {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* I made button full width and larger for better tap target */
+  .contact-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    width: 100%;
+    margin-top: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* I adjusted contact info text for better mobile readability */
+  .contact-info {
+    font-size: 1rem;
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  /* I removed bottom margin on last element to prevent extra spacing */
+  .contact-container > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* I created this media query for desktop devices (screens larger than 768px) */
+@media screen and (min-width: 769px) {
+  /* I hide hamburger menu on desktop */
+  .hamburger-icon {
+    display: none;
+  }
+
+  /* I hide mobile CTA buttons on desktop */
+  .mobile-cta-buttons {
+    display: none;
+  }
+
+  /* I show standard navigation on desktop */
+  header > nav {
+    display: flex;
+  }
+}
+
+/* I created this media query specifically for landscape orientation on mobile devices */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  /* I adjusted image gallery height for landscape mode */
+  .image-gallery {
+    height: 18.75rem;
+  }
 }
