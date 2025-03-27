@@ -57,9 +57,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000; /* Ensures it stays above other content */
+  position: relative;
 }
 
 #logo img {
